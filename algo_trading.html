@@ -6,7 +6,7 @@
     <meta name="description" content="Advanced Algorithmic Trading Platform for Stocks, Forex, and Crypto. Trade smarter with AI-driven signals and real-time execution.">
     <meta name="keywords" content="algorithmic trading, forex, crypto, stocks, AI trading, real-time trading">
     <title>Advanced Algorithmic Trading Platform</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
@@ -22,19 +22,27 @@
 
     <section id="dashboard">
         <h2>Real-Time Market Data</h2>
-        <div id="market-data"></div>
+        <div id="market-data">
+            <p>Fetching data...</p>
+        </div>
     </section>
 
     <section id="strategies">
         <h2>Customize Your Trading Strategy</h2>
         <form id="strategy-form">
-            <!-- Input fields for strategy parameters -->
+            <label for="symbol">Symbol:</label>
+            <input type="text" id="symbol" name="symbol" placeholder="e.g., AAPL" required>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="e.g., 10" required>
+            <button type="submit">Execute Trade</button>
         </form>
     </section>
 
     <section id="performance">
         <h2>Performance Monitoring</h2>
-        <div id="performance-chart"></div>
+        <div id="performance-chart">
+            <p>Performance data will be displayed here.</p>
+        </div>
     </section>
 
     <!-- Ad Space for Google AdSense -->
@@ -42,6 +50,6 @@
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
     </div>
 
-    <script src="scripts.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
